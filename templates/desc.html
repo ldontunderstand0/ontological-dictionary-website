@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<a href="/table" class="icon-link">Назад к таблице терминов</a><br><br>
+<h1>Изменить описание</h1><br>
+<form method="POST">
+    <label for="desc"><h4>Введите описание</h4></label><br>
+    <input type="text" name="desc" id="desc" value="{{ ph }}" class="form-control"></input><br>
+    <input type="submit" class="btn btn-success" value="Обновить описание">
+</form>
+{% endblock %}

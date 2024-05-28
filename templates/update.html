@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<a href="/table/{{ id }}" class="icon-link">Назад</a><br><br>
+<h5>Введите новое название связи</h5>
+<form method="POST">
+    <input type="text" name="name" id="name" value="{{ ph }}" class="form-control"></input>
+    <br><input type="submit" class="btn btn-success" value="Изменить связь">
+</form>
+{% endblock %}

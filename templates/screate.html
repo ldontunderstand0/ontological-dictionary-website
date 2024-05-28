@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container mt-5">
+    <a href="/table" class="icon-link">Назад к таблице терминов</a><br><br>
+    <h3>Создать термин</h3>
+    <form method="post">
+        <label for="{{ form.0 }}">Введите название</label><br>
+        <input type="text" name="{{ form.0 }}" id="{{ form.0 }}" placeholder="{{ form.0 }}" class="form-control"><br>
+        <label for="{{ form.1 }}">Введите описание</label><br>
+        <input type="text" name="{{ form.1 }}" id="{{ form.1 }}" placeholder="{{ form.1 }}" class="form-control"><br>
+        <input type="submit" class="btn btn-success" value="Создать">
+    </form>
+</div>
+{% endblock %}

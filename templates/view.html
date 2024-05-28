@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<a href="/table" class="icon-link">Назад к таблице терминов</a><br><br>
+<table class="table table-hover">
+        <thead>
+            <tr>
+              <th scope="col">Источник</th>
+              <th scope="col">Вид связи</th>
+              <th scope="col">Приемник</th>
+            </tr>
+        </thead>
+        <tbody>
+    {% for el in list %}
+            <tr>
+                <td>{{ el.0.name }}</td>
+                <td>{{ el.1.name }}</td>
+                <td><a href="/table/{{ el.2.id }}" class="icon-link">{{ el.2.name }}</a></td>
+                <td><a href="/table/{{ el.0.id }}/update/{{ el.1.id }}" class="icon-link">Изменить вид связи</a></td>
+            </tr>
+    {% endfor %}
+        </tbody>
+</table>
+{% endblock %}

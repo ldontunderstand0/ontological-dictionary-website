@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block body %}
+<label><h5>Загрузить новую диаграмму</h5></label>
+<form method="POST" enctype="multipart/form-data">
+		<input id="file" type="file" name="file">
+		<button>Разобрать файл</button>
+</form><br><br>
+<label><h4>Таблица терминов</h4></label>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+              <th scope="col">Термин</th>
+              <th scope="col">Определение</th>
+              <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    {% for shape in list %}
+            <tr>
+                <td><a href="/table/{{ shape.id }}" class="icon-link">{{ shape.name }}</a></td>
+                <td>{{ shape.desc }}</td>
+                <td><a href="/table/desc/{{ shape.id }}" class="icon-link">Изменить описание</a></td>
+            </tr>
+    {% endfor %}
+        </tbody>
+    </table>
+<a href="/table/create_shape" class="icon-link">Добавить термин</a><br>
+<a href="/table/create_connector" class="icon-link">Добавить связь</a><br><br><br><br>
+{% endblock %}

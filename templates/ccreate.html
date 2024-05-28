@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container mt-5">
+    <a href="/table" class="icon-link">Назад к таблице терминов</a><br><br>
+    <h3>Создать связь</h3>
+    <form method="post">
+        <label for="source">Выберите источник:</label><br>
+        <select id="source" name="source">
+            {% for i in shapes %}
+            <option value="{{ i.id }}">{{ i.name }}</option>
+            {% endfor %}
+        </select><br><br>
+        <label for="source">Введите название связи:</label><br>
+        <input type="text" name="name" id="name" placeholder="name" class="form-control"><br>
+        <label for="target">Выберите приемник:</label><br>
+        <select id="target" name="target">
+            {% for i in shapes %}
+            <option value="{{ i.id }}">{{ i.name }}</option>
+            {% endfor %}
+        </select><br><br>
+        <input type="submit" class="btn btn-success" value="Создать">
+    </form>
+</div>
+{% endblock %}

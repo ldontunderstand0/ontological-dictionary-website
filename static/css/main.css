@@ -1,0 +1,9 @@
+table, td, th, caption {
+    border-collapse: collapse;
+    border: 3px solid #245488;
+  }
+
+td, th {
+    padding: 10px 20px;
+
+  }
